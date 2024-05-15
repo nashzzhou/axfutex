@@ -13,20 +13,17 @@ default = ["monolithic"]
 
 [dependencies]
 cfg-if = "1.0"
+bitflags = "2.0"
 spinlock = { git = "https://github.com/Starry-OS/spinlock.git" }
+lazy_init = { git = "https://github.com/Starry-OS/lazy_init.git", optional = true }
 axtask = { git = "https://github.com/Starry-OS/axtask.git" }
 axsync = { git = "https://github.com/Starry-OS/axsync.git" }
 axmem = { git = "https://github.com/Starry-OS/axmem.git" }
 axalloc = { git = "https://github.com/Starry-OS/axalloc.git" }
-axio = { git = "https://github.com/Starry-OS/axio.git", features = ["alloc"] }
 axhal = { git = "https://github.com/Starry-OS/axhal.git" }
 axlog = { git = "https://github.com/Starry-OS/axlog.git" }
 axerrno = { git = "https://github.com/Starry-OS/axerrno.git" }
 axconfig = { git = "https://github.com/Starry-OS/axconfig.git" }
 axfs = { git = "https://github.com/Starry-OS/axfs.git", optional = true }
 axsignal = { git = "https://github.com/Starry-OS/axsignal.git" }
-riscv = "0.10"
-bitflags = "2.0"
-lazy_static = { version = "1.4", features = ["spin_no_std"] }
-xmas-elf = "0.9.0"
-elf_parser = { git = "https://github.com/Starry-OS/elf_parser.git" }
+axprocess = { git = "https://github.com/Starry-OS/axprocess.git" }

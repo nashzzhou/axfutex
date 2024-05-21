@@ -5,21 +5,22 @@
 
 extern crate alloc;
 
-
 use axlog::info;
 mod core;
 mod futex;
 mod requque;
 mod waitwake;
+mod flags;
 
-use lazy_init::LazyInit;
+pub use waitwake::*;
+pub use requque::*;
 
-use core::{FUTEX_HASH_BUCKETS, FutexHashBuckets};
+use core::{FUTEX_QUEUES, FutexHashBuckets};
 
 const FUTEX_HASH_SIZE: usize = 256;
 
 /// Initializes 
 pub fn init_futex() {
     info!("Initialize futex...");
-    FUTEX_HASH_BUCKETS.init_by(FutexHashBuckets::new(FUTEX_HASH_SIZE));
+    FUTEX_QUEUES.init_by(FutexHashBuckets::new(FUTEX_HASH_SIZE));
 }
